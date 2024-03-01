@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 class MySQLIOManager:
 
 def __init__(self, config):
