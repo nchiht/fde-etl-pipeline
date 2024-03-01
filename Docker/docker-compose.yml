@@ -1,0 +1,79 @@
+version: "3.3"
+
+services:
+  minio:
+    hostname: minio
+    image: "minio/minio"
+    container_name: minio
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+      - MINIO_ACCESS_KEY=minio
+      - MINIO_SECRET_KEY=minio123
+    ports:
+      - "9001:9001"
+      - "9000:9000"
+    command: [ "server", "/data", "--console-address", ":9001"]
+    volumes:
+      - ./storage/minio:/data
+#    networks:
+#      - storage_network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+#    networks:
+#      - storage_network
+
+  postgres:
+    image: postgres:15
+    restart: always
+    container_name: postgres
+    volumes:
+      - ./storage/postgres:/var/lib/postgresql/data
+    ports:
+      - "8080:5432"
+    environment:
+      - POSTGRES_DB=fde
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD="oot
+      - POSTGRES_HOST_AUTH_METHOD=trust
+#    networks:
+#      - storage_network
+
+
+#  create_tables:
+#    build:
+#      context: ./init
+#      dockerfile: ./Dockerfile
+#    container_name: create_tables
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
+#    networks:
+#      - storage_network
+
+#  load_data:
+#    build:
+#      context: ./load
+#      dockerfile: ./Dockerfile
+#    container_name: load_data
+#    depends_on:
+#      create_tables:
+#        condition: service_completed_successfully
+#    volumes:
+#      - ./data:/usr/src/app/data
+#    networks:
+#      - storage_network
+#
+#networks:
+#  storage_network:
+#    driver: bridge
+#    name: storage_network
