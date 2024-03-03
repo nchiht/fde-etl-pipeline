@@ -1,7 +1,7 @@
 import pandas as pd
 from dagster import asset, Output, Definitions, AssetIn
 from resources.mysql_io_manager import MySQLIOManager
-from resources.psql_io_manager import MinIOManager
+from resources.minio_io_manager import MinIOManager
 
 
 @asset(
