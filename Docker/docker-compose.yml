@@ -43,7 +43,7 @@ services:
     environment:
       - POSTGRES_DB=fde
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD="oot
+      - POSTGRES_PASSWORD=root
       - POSTGRES_HOST_AUTH_METHOD=trust
 #    networks:
 #      - storage_network
