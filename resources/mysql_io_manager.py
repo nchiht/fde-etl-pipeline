@@ -13,8 +13,12 @@ class MySQLIOManager:
             cnx = connector.connect(**self._config)
             cur = cnx.cursor()
             try:
+
                 cur.execute(sql)
-                return pd.DataFrame(cur)
+                data = cur.fetchall()
+                columns_name = [col[0] for col in cur.description]
+
+                return pd.DataFrame(data, columns=columns_name)
             finally:
                 cur.close()
                 cnx.close()

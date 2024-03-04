@@ -1,0 +1,24 @@
+[32m2024-03-04 10:58:11 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - LOGS_CAPTURED - Started capturing logs in process (pid: 36038).
+[32m2024-03-04 10:58:11 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - STEP_START - Started execution of step "olist_orders_dataset".
+[32m2024-03-04 10:58:12 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - olist_orders_dataset -                            order_id  ... order_estimated_delivery_date
+0  00010242fe8c5a6d1ba2dd792cb16214  ...           2017-09-29 00:00:00
+1  00018f77f2f0320c557190d7a144bdd3  ...           2017-05-15 00:00:00
+2  000229ec398224ef6ca0657da4fc703e  ...           2018-02-05 00:00:00
+3  00024acbcdf0a6daa1e931b038114c75  ...           2018-08-20 00:00:00
+4  00042b26cf59d7ce69dfabb4e55b4fd9  ...           2017-03-17 00:00:00
+
+[5 rows x 8 columns]
+[32m2024-03-04 10:58:12 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - LOADED_INPUT - Loaded input "bronze_olist_orders_dataset" using input manager "minio_io_manager"
+[32m2024-03-04 10:58:12 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - STEP_INPUT - Got input "bronze_olist_orders_dataset" of type "Any". (Type check passed).
+[32m2024-03-04 10:58:12 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - STEP_OUTPUT - Yielded output "olist_orders_dataset" of type "DataFrame". (Type check passed).
+[32m2024-03-04 10:58:12 +0700[0m - dagster - [34mINFO[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - olist_orders_dataset -                            order_id  ... order_estimated_delivery_date
+0  00010242fe8c5a6d1ba2dd792cb16214  ...           2017-09-29 00:00:00
+1  00018f77f2f0320c557190d7a144bdd3  ...           2017-05-15 00:00:00
+2  000229ec398224ef6ca0657da4fc703e  ...           2018-02-05 00:00:00
+3  00024acbcdf0a6daa1e931b038114c75  ...           2018-08-20 00:00:00
+4  00042b26cf59d7ce69dfabb4e55b4fd9  ...           2017-03-17 00:00:00
+
+[5 rows x 8 columns]
+[32m2024-03-04 10:58:17 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - ASSET_MATERIALIZATION - Materialized value warehouse public olist_orders_dataset.
+[32m2024-03-04 10:58:17 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - HANDLED_OUTPUT - Handled output "olist_orders_dataset" using IO manager "psql_io_manager"
+[32m2024-03-04 10:58:17 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0201580b-317f-4fd0-8416-9541a18519b4 - 36038 - olist_orders_dataset - STEP_SUCCESS - Finished execution of step "olist_orders_dataset" in 4.81s.

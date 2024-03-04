@@ -17,6 +17,8 @@ class MinIOManager(IOManager):
 
     def handle_output(self, context: OutputContext, obj: pd.DataFrame):
 
+        obj.to_csv('data/df.csv', header=True, index=False)
+
         data = obj.to_csv(index=False, header=True).encode('utf-8')
 
         # can define file's name here
